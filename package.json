@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/mattvaldez/mattvaldez.github.io/issues"
   },
-  "homepage": "https://github.com/mattvaldez/mattvaldez.github.io#readme"
+  "homepage": "https://github.com/mattvaldez/mattvaldez.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
 }
