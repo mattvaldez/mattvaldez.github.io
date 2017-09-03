@@ -108,13 +108,17 @@ textarea {
       height: 100%;
     }
 
-   .show-projects {
-     width: 100%;
-     height: 100px;
-     background: red;
-     padding: 0 20px 0 20px;
+   .wat {
      margin: auto;
+     width: 35.7%;
+     height: 92%;
      cursor: pointer;
+   }
+
+   .links {
+     margin: auto;
+     width: 100%;
+     height: 100%;
    }
 
 
