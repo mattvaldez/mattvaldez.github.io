@@ -110,13 +110,37 @@ textarea {
    }
 
    .links {
-     display: none;
      margin: auto;
      width: 100%;
      height: 100%;
      background: #ecf0f1;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
    }
 
+   .company-logo {
+     width: 35%;
+   }
+
+   .project-logo {
+     width: 50%;
+     margin-top: 30px;
+   }
+
+   ul {
+     list-style-type: none;
+   }
+
+   .company {
+     width: 50%;
+   }
+   .projects {
+     margin-top: 50px;
+     width: 50%
+   }
 
 
 
