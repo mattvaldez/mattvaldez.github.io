@@ -96,30 +96,28 @@ textarea {
    ========================================================================== */
    body, html {
        height: 100%;
-       background: url('../img/wat_mv.png') no-repeat center center fixed;
-       background-size: contain;
+       /*background: url('../img/wat_mv.png') no-repeat center center fixed;
+       background-size: contain;*/
    }
 
    .container {
      height:100%;
     }
 
-    .box {
-      height: 100%;
-    }
-
    .wat {
+     background: url('../img/wat_mv.png') no-repeat center center fixed;
      margin: auto;
-     width: 35.7%;
-     height: 92%;
+     width: 50%;
+     height: 100%;
      cursor: pointer;
    }
 
-   .links {
+   /*.links {
      margin: auto;
      width: 100%;
      height: 100%;
-   }
+     background: red;
+   }*/
 
 
 
