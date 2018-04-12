@@ -96,6 +96,7 @@ textarea {
    ========================================================================== */
    body {
      background-color: #ecf0f1 !important;
+     cursor:'pointer'
    }
 
    p {
