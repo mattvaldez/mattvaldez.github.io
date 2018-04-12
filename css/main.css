@@ -92,11 +92,11 @@ textarea {
 }
 
 /* ==========================================================================
-   matt styles
+   matt's styles
    ========================================================================== */
    body {
      background-color: #ecf0f1 !important;
-     cursor:'pointer'
+     cursor:'pointer';
    }
 
    p {
@@ -120,6 +120,17 @@ textarea {
    .experience {
      padding: 2em 5em 1em 2em;
    }
+
+   .experience-component {
+      transition: height 500ms 500ms, opacity 500ms 0ms;
+      opacity: 0;
+      height:0;
+   }
+  .experience-component.show {
+    opacity: 1;
+    height:400px;
+    transition: height 500ms 0ms, opacity 500ms 500ms;
+  }
 
    .company-logo {
      width: 15%;

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <title>Matt Valdez</title>
+    <title>Hello, I'm Matt Valdez</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -25,38 +25,31 @@
         constructor(props){
           super(props)
           this.state = {
-            showingExperience: false
+            experienceClasses: ['experience-component']
           }
           this.showExperience = this.showExperience.bind(this)
           this.hideExperience = this.hideExperience.bind(this)
         }
         showExperience(){
-            this.setState({
-              showingExperience:true
-            })
+          let stateCopy = this.state.experienceClasses;
+          stateCopy.push('show');
+          this.setState({
+            experienceClasses: stateCopy
+          })
         }
         hideExperience(){
           this.setState({
-            showingExperience:false
+            experienceClasses: ['experience-component']
           })
         }
         render() {
-          if(this.state.showingExperience){
-            return (
-              <div className="card" onMouseLeave={this.hideExperience} onMouseEnter={this.showExperience}>
-                <Contact name="Matt Valdez" title="Software Developer" email="matvaldez@gmail.com"/>
-                <Experience/>
-                <Footer />
-              </div>
-            );
-          }else{
-            return (
-              <div className="card" onMouseLeave={this.hideExperience} onMouseEnter={this.showExperience}>
-                <Contact name="Matt Valdez" title="Software Developer" email="matvaldez@gmail.com"/>
-                <Footer />
-              </div>
-            );
-          }
+          return (
+            <div className="card" onMouseLeave={this.hideExperience} onMouseEnter={this.showExperience}>
+              <Contact name="Matt Valdez" title="Software Developer" email="matvaldez@gmail.com"/>
+              <Experience experienceClasses={this.state.experienceClasses.join(' ')}/>
+              <Footer />
+            </div>
+          );
         }
       }
 
@@ -87,9 +80,12 @@
       }
 
       class Experience extends React.Component {
+        constructor(props){
+          super(props)
+        }
         render () {
           return (
-            <div className="experience">
+            <div className={this.props.experienceClasses}>
               <div className="row">
                 <div className="col-sm-12">
                   <p className="text-center">I build and maintain web applications for a small software company located in Atlanta, GA.</p>
@@ -124,17 +120,5 @@
       );
 
     </script>
-    <!--
-      Note: this page is a great way to try React but it's not suitable for production.
-      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-      To set up a production-ready React build environment, follow these instructions:
-      * https://reactjs.org/docs/add-react-to-a-new-app.html
-      * https://reactjs.org/docs/add-react-to-an-existing-app.html
-
-      You can also use React without JSX, in which case you can remove Babel:
-      * https://reactjs.org/docs/react-without-jsx.html
-      * https://reactjs.org/docs/cdn-links.html
-    -->
   </body>
 </html>
