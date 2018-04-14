@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.5.0/hint.base.min.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
@@ -82,21 +83,6 @@
       class Experience extends React.Component {
         constructor(props){
           super(props)
-          this.state = {
-            skillClasses: 'skill'
-          }
-          this.highlightSkill = this.highlightSkill.bind(this)
-          this.lowlightSkill = this.lowlightSkill.bind(this)
-        }
-        highlightSkill(){
-          this.setState({
-            skillClasses: 'skill'
-          })
-        }
-        lowlightSkill(){
-          this.setState({
-            skillClasses: 'skill'
-          })
         }
         render () {
           return (
@@ -108,26 +94,26 @@
               </div>
               <div className="row">
                 <div className="projects col-sm-12">
-                  <p className="text-center">Here is some of the technology I like to work with:</p>
+                  <p className="text-center">Here is some of the technology I like to work with everyday:</p>
                   <div className="skills">
-                    <span><i className={"devicon-javascript-plain colored ".concat(this.state.skillClasses)} onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-react-original colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-rails-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-ruby-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-angularjs-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-amazonwebservices-original colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-heroku-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-css3-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-git-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-html5-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-jquery-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-mysql-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-nodejs-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-postgresql-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-trello-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-webpack-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-bootstrap-plain colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
-                    <span><i className="devicon-bower-line colored skill" onMouseLeave={this.lowlightSkill} onMouseEnter={this.highlightSkill}></i></span>
+                    <span className="skill-shake hint--top" aria-label="JavaScript"><i className="devicon-javascript-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="React JS"><i className="devicon-react-original colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Rails"><i className="devicon-rails-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Ruby"><i className="devicon-ruby-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Angular JS"><i className="devicon-angularjs-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="AWS"><i className="devicon-amazonwebservices-original colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Heroku"><i className="devicon-heroku-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="CSS3"><i className="devicon-css3-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="git"><i className="devicon-git-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="HTML 5"><i className="devicon-html5-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="jQuery"><i className="devicon-jquery-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="MySQL"><i className="devicon-mysql-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top"aria-label="Node.js"><i className="devicon-nodejs-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Postgresql"><i className="devicon-postgresql-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Trello"><i className="devicon-trello-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Atom"><i className="devicon-atom-original colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Bootstrap"><i className="devicon-bootstrap-plain colored skill"></i></span>
+                    <span className="skill-shake hint--top" aria-label="Android"><i className="devicon-android-plain colored skill"></i></span>
                   </div>
                 </div>
               </div>
