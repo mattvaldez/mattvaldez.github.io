@@ -146,13 +146,19 @@ textarea {
 
    .skills {
      display: flex;
-     justify-content: center;
+     justify-content: space-around;
      flex-wrap: wrap;
    }
 
    .skill {
+     transition: font-size 500ms;
      padding: .5em;
      font-size: 40px;
+   }
+
+   .skill.highlight {
+     font-size: 44px;
+     transition: font-size 500ms;
    }
 
    .footer-icon {
