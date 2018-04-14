@@ -144,6 +144,25 @@ textarea {
      color: #2ecc71;
    }
 
+   .skills {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+   }
+
+   .skill {
+     padding: .5em;
+     font-size: 40px;
+   }
+
+   .footer-icon {
+     font-size: 40px;
+   }
+
+   .footer-link {
+     text-decoration: none !important;
+   }
+
    @media screen and (max-width: 1028px) {
      .card {
         width:60%;

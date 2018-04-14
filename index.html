@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
@@ -87,15 +88,32 @@
             <div className={this.props.experienceClasses}>
               <div className="row">
                 <div className="col-sm-12">
-                  <p className="text-center">I build and maintain web applications for a small software company located in Atlanta, GA.</p>
-                  <p className="text-center"><a href="https://www.standardco.de/matt-valdez-developer"><img src="img/sc_logo.svg" className="company-logo" /></a></p>
+                  <p className="text-center">Full stack web developer, currently building and maintaining a range of projects for a small software company located in Atlanta, GA.</p>
                 </div>
               </div>
               <div className="row">
                 <div className="projects col-sm-12">
-                  <p className="text-center">Full stack programmer, specializing in Ruby on Rails web applications, such as these:</p>
-                  <p className="text-center"><a href="https://www.geoconnect.org"><img src="img/geoconnect_brand.png" className="project-logo" /></a></p>
-                  <p className="text-center"><a href="https://beta.securedatakit.com"><img src="img/logo.png" className="project-logo" /></a></p>
+                  <p className="text-center">Here is some of the technology I like to work with:</p>
+                  <div className="skills">
+                    <span><i className="devicon-javascript-plain colored skill"></i></span>
+                    <span><i className="devicon-react-original colored skill"></i></span>
+                    <span><i className="devicon-rails-plain colored skill"></i></span>
+                    <span><i className="devicon-ruby-plain colored skill"></i></span>
+                    <span><i className="devicon-angularjs-plain colored skill"></i></span>
+                    <span><i className="devicon-amazonwebservices-original colored skill"></i></span>
+                    <span><i className="devicon-heroku-plain colored skill"></i></span>
+                    <span><i className="devicon-css3-plain colored skill"></i></span>
+                    <span><i className="devicon-git-plain colored skill"></i></span>
+                    <span><i className="devicon-html5-plain colored skill"></i></span>
+                    <span><i className="devicon-jquery-plain colored skill"></i></span>
+                    <span><i className="devicon-mysql-plain colored skill"></i></span>
+                    <span><i className="devicon-nodejs-plain colored skill"></i></span>
+                    <span><i className="devicon-postgresql-plain colored skill"></i></span>
+                    <span><i className="devicon-trello-plain colored skill"></i></span>
+                    <span><i className="devicon-webpack-plain colored skill"></i></span>
+                    <span><i className="devicon-bootstrap-plain colored skill"></i></span>
+                    <span><i className="devicon-bower-line colored skill"></i></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -107,7 +125,7 @@
         render () {
           return (
             <footer>
-              <p className="text-center"><a href="https://github.com/mattvaldez"><img src="img/GitHub-Mark-32px.png" className="github-logo" /></a></p>
+              <p className="text-center"><a className="footer-link" href="https://github.com/mattvaldez"><i className="devicon-github-plain colored footer-icon"></i></a></p>
             </footer>
           );
         }
