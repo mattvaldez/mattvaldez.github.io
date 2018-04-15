@@ -205,10 +205,13 @@ textarea {
      text-decoration: none !important;
    }
 
-   @media screen and (max-width: 1028px) {
+   @media screen and (max-width: 800px) {
      .card {
         width:60%;
       }
+   }
+
+   @media screen and (max-width: 600px) {
       .experience-component {
         display: none;
       }
