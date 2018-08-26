@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+@background_color: #ecf0f1;
+@card_color: #ffffff;
+
+body {
+  background-color: @background_color
+}
+
+.paragraphs{
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  a {
+    text-decoration: none;
+  }
+}
+
+.card {
+  background: @card_color;
+  margin: 5em auto auto auto;
+  padding: 10px 10px 5px 10px;
+  width: 40%;
+  .contact{
+    .paragraphs();
+  }
+  .experience{
+    .paragraphs();
+    transition: opacity .5s linear, height 1s ease .5s;
+    opacity: 0;
+    height:0;
+    img {
+      width: 30%;
+      border-radius: 2px;
+    }
+    ul{
+      margin: 0 auto;
+      text-align: center;
+      padding: 5px;
+      li{
+        font-size: 2.5em;
+        float: left;
+        display: inline-block;
+        vertical-align: top;
+        margin: 2px;
+        width: 10%;
+        left: 10px;
+      }
+    }
+  }
+  .experience.show {
+    .paragraphs();
+    transition: height 1s, opacity .5s linear 1s;
+    opacity: 1;
+    height: 400px;
+    overflow: auto;
+    img {
+      width: 30%;
+      border-radius: 2px;
+    }
+    ul{
+      margin: 0 auto;
+      text-align: center;
+      padding: 5px;
+      li{
+        font-size: 2.5em;
+        float: left;
+        display: inline-block;
+        vertical-align: top;
+        margin: 2px;
+        width: 10%;
+        left: 10px;
+      }
+    }
+  }
+  .skill-shake:hover {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @keyframes shake {
+      10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+  footer {
+    padding-top: 2em;
+    width: 100%;
+    display: block;
+    .paragraphs();
+    .footer-icon{
+      font-size: 2em;
+      margin: auto 0 0 0;
+    }
+    .carrot-up{
+      display:inline-block;
+      font-size: 2em;
+      transition: transform 400ms ease-in-out;
+      &:hover{
+        cursor: pointer;
+        transition: transform 400ms;
+        transform: scale(2.5)
+      }
+    }
+    .carrot-down{
+      display:inline-block;
+      font-size: 2em;
+      transition: transform 400ms ease-in-out;
+      transform:rotate(180deg);
+      &:hover{
+        cursor: pointer;
+        transition: transform 400ms;
+        transform: scale(2.5) rotate(-180deg);
+      }
+    }
+  }
+}

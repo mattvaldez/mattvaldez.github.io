@@ -3,20 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
+    <meta name="description" content="Matt Valdez, a great software guy.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <title>Hello, I'm Matt Valdez</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Matt Valdez</title>
+    <link rel="stylesheet" href="css/style.css">
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.5.0/hint.base.min.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
@@ -26,29 +22,32 @@
         constructor(props){
           super(props)
           this.state = {
-            experienceClasses: ['experience-component']
+            experienceClasses: ['experience'],
+            open: false
           }
-          this.showExperience = this.showExperience.bind(this)
-          this.hideExperience = this.hideExperience.bind(this)
+          this.toggleExperience = this.toggleExperience.bind(this)
         }
-        showExperience(){
-          let stateCopy = this.state.experienceClasses;
-          stateCopy.push('show');
-          this.setState({
-            experienceClasses: stateCopy
-          })
-        }
-        hideExperience(){
-          this.setState({
-            experienceClasses: ['experience-component']
-          })
+        toggleExperience(){
+          if (this.state.open){
+            this.setState({
+              experienceClasses: ['experience'],
+              open: false
+            })
+          }else{
+            let stateCopy = this.state.experienceClasses;
+            stateCopy.push('show');
+            this.setState({
+              experienceClasses: stateCopy,
+              open: true
+            })
+          }
         }
         render() {
           return (
-            <div className="card" onMouseLeave={this.hideExperience} onMouseEnter={this.showExperience}>
+            <div className="card">
               <Contact name="Matt Valdez" title="Software Developer" email="matvaldez@gmail.com"/>
               <Experience experienceClasses={this.state.experienceClasses.join(' ')}/>
-              <Footer />
+              <Footer toggleExperience={this.toggleExperience}/>
             </div>
           );
         }
@@ -58,23 +57,11 @@
         render() {
           return (
             <div className="contact">
-              <div className="row">
-                <div className="col-sm-12">
-                  <p className="text-center name">{this.props.name}</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="company col-sm-12">
-                  <p className="text-center">{this.props.title}</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <p className="text-center">
-                    <a href={"mailto:"+this.props.email+"?Subject=Hello!"} className="email" target="_top">{this.props.email}</a>
-                  </p>
-                </div>
-              </div>
+              <p className="name">{this.props.name}</p>
+              <p className="title">{this.props.title}</p>
+              <p className="email">
+                <a href={"mailto:"+this.props.email+"?Subject=Hello!"} className="email" target="_top">{this.props.email}</a>
+              </p>
             </div>
           );
         }
@@ -87,44 +74,63 @@
         render () {
           return (
             <div className={this.props.experienceClasses}>
-                <div className="introduction">
-                    <p className="profile-line">Full stack web developer, currently building and maintaining a range of projects for a small software company located in Atlanta, GA.</p>
-                </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <p className="text-center">Here is some of the technology I like to work with everyday:</p>
-                  <div className="skills">
-                    <span className="skill-shake hint--top" aria-label="JavaScript"><i className="devicon-javascript-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="React JS"><i className="devicon-react-original colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Rails"><i className="devicon-rails-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Ruby"><i className="devicon-ruby-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Angular JS"><i className="devicon-angularjs-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="AWS"><i className="devicon-amazonwebservices-original colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Heroku"><i className="devicon-heroku-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="CSS3"><i className="devicon-css3-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="git"><i className="devicon-git-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="HTML 5"><i className="devicon-html5-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="jQuery"><i className="devicon-jquery-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="MySQL"><i className="devicon-mysql-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top"aria-label="Node.js"><i className="devicon-nodejs-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Postgresql"><i className="devicon-postgresql-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Trello"><i className="devicon-trello-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Atom"><i className="devicon-atom-original colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Bootstrap"><i className="devicon-bootstrap-plain colored skill"></i></span>
-                    <span className="skill-shake hint--top" aria-label="Android"><i className="devicon-android-plain colored skill"></i></span>
-                  </div>
-                </div>
-              </div>
+              <p>Full stack web developer, currently building and maintaining a range of projects for a small software company located in Atlanta, GA.</p>
+              <img src="img/profile.png"/>
+              <p>Here is some of the technology I like to work with everyday:</p>
+              <ul>
+                <li className="skill-shake hint--top" aria-label="Ruby"><i className="devicon-ruby-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Rails"><i className="devicon-rails-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="JavaScript"><i className="devicon-javascript-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="React JS"><i className="devicon-react-original colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="jQuery"><i className="devicon-jquery-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Angular JS"><i className="devicon-angularjs-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="HTML 5"><i className="devicon-html5-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="CSS3"><i className="devicon-css3-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Bootstrap"><i className="devicon-bootstrap-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Node.js"><i className="devicon-nodejs-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="MySQL"><i className="devicon-mysql-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Postgresql"><i className="devicon-postgresql-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="LESS"><i className="devicon-less-plain-wordmark colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="git"><i className="devicon-git-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="AWS"><i className="devicon-amazonwebservices-original colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Heroku"><i className="devicon-heroku-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Trello"><i className="devicon-trello-plain colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Atom"><i className="devicon-atom-original colored skill"></i></li>
+              </ul>
             </div>
           );
         }
       }
 
       class Footer extends React.Component {
+        constructor(props){
+          super(props)
+          this.state = {
+            toggleExperience: props.toggleExperience,
+            carrotClass: "carrot-down",
+            open: false,
+          }
+          this.toggleExperience = this.toggleExperience.bind(this)
+        }
+        toggleExperience(){
+          if (this.state.open){
+            this.setState({
+              carrotClass: "carrot-down",
+              open: false
+            })
+          }else{
+            this.setState({
+              carrotClass: "carrot-up",
+              open: true
+            })
+          }
+          this.state.toggleExperience();
+        }
         render () {
           return (
             <footer>
-              <p className="text-center"><a className="footer-link" href="https://github.com/mattvaldez"><i className="devicon-github-plain colored footer-icon"></i></a></p>
+              <p className="footer-icon"><a href="https://github.com/mattvaldez"><i className="devicon-github-plain colored"></i></a></p>
+              <p className={this.state.carrotClass} onClick={this.toggleExperience}>^</p>
             </footer>
           );
         }
