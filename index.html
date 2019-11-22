@@ -74,29 +74,33 @@
         render () {
           return (
             <div className={this.props.experienceClasses}>
-              <p>Full stack web developer, currently building and maintaining a range of projects for a small software company located in Atlanta, GA.</p>
+              <p className="intro">Full stack web developer, currently building and maintaining a range of projects for a small software company located in Atlanta, GA.</p>
               <img src="img/profile.png"/>
-              <p>Here is some of the technology I like to work with everyday:</p>
               <ul>
-                <li className="skill-shake hint--top" aria-label="Ruby"><i className="devicon-ruby-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Rails"><i className="devicon-rails-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="JavaScript"><i className="devicon-javascript-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="React JS"><i className="devicon-react-original colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="jQuery"><i className="devicon-jquery-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Angular JS"><i className="devicon-angularjs-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="HTML 5"><i className="devicon-html5-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="CSS3"><i className="devicon-css3-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Bootstrap"><i className="devicon-bootstrap-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Node.js"><i className="devicon-nodejs-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="MySQL"><i className="devicon-mysql-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Postgresql"><i className="devicon-postgresql-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="LESS"><i className="devicon-less-plain-wordmark colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="git"><i className="devicon-git-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="AWS"><i className="devicon-amazonwebservices-original colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Heroku"><i className="devicon-heroku-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Trello"><i className="devicon-trello-plain colored skill"></i></li>
-                <li className="skill-shake hint--top" aria-label="Atom"><i className="devicon-atom-original colored skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Ruby"><i className="devicon-ruby-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Rails"><i className="devicon-rails-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="JavaScript"><i className="devicon-javascript-plain skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="React JS"><i className="devicon-react-original-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="jQuery"><i className="devicon-jquery-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Angular JS"><i className="devicon-angularjs-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="HTML 5"><i className="devicon-html5-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="CSS3"><i className="devicon-css3-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Bootstrap"><i className="devicon-bootstrap-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Node.js"><i className="devicon-nodejs-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="MySQL"><i className="devicon-mysql-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Postgresql"><i className="devicon-postgresql-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="LESS"><i className="devicon-less-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="git"><i className="devicon-git-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="AWS"><i className="devicon-amazonwebservices-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Heroku"><i className="devicon-heroku-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Trello"><i className="devicon-trello-plain-wordmark skill"></i></li>
+                <li className="skill-shake hint--top" aria-label="Atom"><i className="devicon-atom-original skill"></i></li>
               </ul>
+              <div className="icon-div">
+                <a href="https://github.com/mattvaldez"><ion-icon name="logo-github"></ion-icon></a>
+                |
+                <a href="https://www.linkedin.com/in/matt-valdez-840b2b15/"><ion-icon name="logo-linkedin"></ion-icon></a>
+              </div>
             </div>
           );
         }
@@ -113,6 +117,7 @@
           this.toggleExperience = this.toggleExperience.bind(this)
         }
         toggleExperience(){
+          console.log("yolo");
           if (this.state.open){
             this.setState({
               carrotClass: "carrot-down",
@@ -128,9 +133,10 @@
         }
         render () {
           return (
-            <footer>
-              <p className="footer-icon"><a href="https://github.com/mattvaldez"><i className="devicon-github-plain colored"></i></a></p>
-              <p className={this.state.carrotClass} onClick={this.toggleExperience}>^</p>
+            <footer> 
+              <div className={this.state.carrotClass} onClick={this.toggleExperience}>
+               <ion-icon name="arrow-round-up"></ion-icon>
+              </div> 
             </footer>
           );
         }
@@ -142,5 +148,6 @@
       );
 
     </script>
+    <script src="https://unpkg.com/ionicons@4.6.3/dist/ionicons.js"></script>
   </body>
 </html>
