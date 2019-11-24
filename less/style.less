@@ -2,6 +2,7 @@
 
 @background_color: #ecf0f1;
 @card_color: #ffffff;
+@link_blue: #007bff;
 
 body {
   background-color: @background_color
@@ -12,6 +13,7 @@ body {
   font-family: 'Rubik', sans-serif;
   a {
     text-decoration: none;
+    color: @link_blue;
   }
 }
 
@@ -22,7 +24,7 @@ body {
   width: 40%;
   .contact{
     .email{
-      color: #007bff;
+      color: @link_blue;
     }
     .paragraphs();
   }
@@ -63,7 +65,10 @@ body {
       font-size: 2.5em;
       margin: auto 0 0 0;
       ion-icon {
-        color: #000000
+        color: #696969;
+        &:hover{
+          color: #000000
+        }
       }
     }
     img {
@@ -118,7 +123,7 @@ body {
       display:inline-block;
       font-size: 2em;
       transition: transform 400ms ease-in-out;
-      color: #696969;
+      color: @link_blue;
       &:hover{
         cursor: pointer;
         transition: transform 400ms;
@@ -130,10 +135,9 @@ body {
       font-size: 2em;
       transition: transform 400ms ease-in-out;
       transform:rotate(180deg);
-      color: #007bff;
+      color: @link_blue;
       &:hover{
         cursor: pointer;
-        color: #696969;
         transition: transform 400ms;
         transform: scale(1.5) rotate(-180deg);
       }

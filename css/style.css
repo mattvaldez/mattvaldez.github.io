@@ -13,6 +13,7 @@ body {
 }
 .paragraphs a {
   text-decoration: none;
+  color: #007bff;
 }
 .card {
   background: #ffffff;
@@ -29,6 +30,7 @@ body {
 }
 .card .contact a {
   text-decoration: none;
+  color: #007bff;
 }
 .card .experience {
   text-align: center;
@@ -39,6 +41,7 @@ body {
 }
 .card .experience a {
   text-decoration: none;
+  color: #007bff;
 }
 .card .experience img {
   width: 30%;
@@ -68,6 +71,7 @@ body {
 }
 .card .experience.show a {
   text-decoration: none;
+  color: #007bff;
 }
 .card .experience.show .intro {
   color: #696969;
@@ -77,6 +81,9 @@ body {
   margin: auto 0 0 0;
 }
 .card .experience.show .icon-div ion-icon {
+  color: #696969;
+}
+.card .experience.show .icon-div ion-icon:hover {
   color: #000000;
 }
 .card .experience.show img {
@@ -131,12 +138,13 @@ body {
 }
 .card footer a {
   text-decoration: none;
+  color: #007bff;
 }
 .card footer .carrot-up {
   display: inline-block;
   font-size: 2em;
   transition: transform 400ms ease-in-out;
-  color: #696969;
+  color: #007bff;
 }
 .card footer .carrot-up:hover {
   cursor: pointer;
@@ -152,7 +160,6 @@ body {
 }
 .card footer .carrot-down:hover {
   cursor: pointer;
-  color: #696969;
   transition: transform 400ms;
   transform: scale(1.5) rotate(-180deg);
 }
