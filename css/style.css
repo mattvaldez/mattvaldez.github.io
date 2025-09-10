@@ -1,165 +1,207 @@
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXk.ttf) format('truetype');
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #0984e3;
+  --secondary-color: #64748b;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
 body {
-  background-color: #ecf0f1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--surface);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
-.paragraphs {
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
-}
-.paragraphs a {
-  text-decoration: none;
-  color: #007bff;
-}
-.card {
-  background: #ffffff;
-  margin: 5em auto auto auto;
-  padding: 10px 10px 5px 10px;
-  width: 40%;
-}
-.card .contact {
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
-}
-.card .contact .email {
-  color: #007bff;
-}
-.card .contact a {
-  text-decoration: none;
-  color: #007bff;
-}
-.card .experience {
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
-  transition: opacity 0.5s linear, height 1s ease 0.5s;
-  opacity: 0;
-  height: 0;
-}
-.card .experience a {
-  text-decoration: none;
-  color: #007bff;
-}
-.card .experience img {
-  width: 30%;
-  border-radius: 2px;
-}
-.card .experience ul {
+
+/* Container and layout */
+.container {
+  max-width: 640px;
   margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* Hero section */
+.hero {
   text-align: center;
-  padding: 5px;
+  padding: 2rem 0;
 }
-.card .experience ul li {
-  font-size: 2.5em;
-  float: left;
-  display: inline-block;
-  vertical-align: top;
-  margin: 2px;
-  width: 10%;
-  left: 10px;
+
+.profile-image {
+  margin-bottom: 1.5rem;
 }
-.card .experience.show {
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
-  transition: height 1s, opacity 0.5s linear 1s;
-  opacity: 1;
-  height: 400px;
-  overflow: auto;
+
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--background);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s ease;
 }
-.card .experience.show a {
+
+.profile-image img:hover {
+  transform: scale(1.05);
+}
+
+.name {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.location {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Contact section */
+.contact {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
   text-decoration: none;
-  color: #007bff;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
-.card .experience.show .intro {
-  color: #696969;
+
+.contact-link:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
-.card .experience.show .icon-div {
-  font-size: 2.5em;
-  margin: auto 0 0 0;
+
+.contact-link svg {
+  flex-shrink: 0;
 }
-.card .experience.show .icon-div ion-icon {
-  color: #696969;
-}
-.card .experience.show .icon-div ion-icon:hover {
-  color: #000000;
-}
-.card .experience.show img {
-  width: 30%;
-  border-radius: 2px;
-}
-.card .experience.show ul {
-  margin: 0 auto;
-  text-align: center;
-  padding: 5px;
-}
-.card .experience.show ul li {
-  font-size: 2.5em;
-  float: left;
-  display: inline-block;
-  vertical-align: top;
-  margin: 2px;
-  width: 10%;
-  left: 10px;
-}
-.card .skill-shake:hover {
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+    gap: 2rem;
   }
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
+  
+  .name {
+    font-size: 1.875rem;
   }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
+  
+  .title {
+    font-size: 1.125rem;
   }
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
+  
+  .contact-links {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-link {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
   }
 }
-.card footer {
-  padding-top: 2em;
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
+
+@media (max-width: 480px) {
+  .profile-image img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .name {
+    font-size: 1.75rem;
+  }
 }
-.card footer a {
-  text-decoration: none;
-  color: #007bff;
+
+/* Animation for smooth loading */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.card footer .carrot-up {
-  display: inline-block;
-  font-size: 2em;
-  transition: transform 400ms ease-in-out;
-  color: #007bff;
+
+.hero,
+.contact {
+  animation: fadeInUp 0.6s ease-out;
 }
-.card footer .carrot-up:hover {
-  cursor: pointer;
-  transition: transform 400ms;
-  transform: scale(1.5);
+
+.contact {
+  animation-delay: 0.1s;
 }
-.card footer .carrot-down {
-  display: inline-block;
-  font-size: 2em;
-  transition: transform 400ms ease-in-out;
-  transform: rotate(180deg);
-  color: #007bff;
+
+/* Focus styles for accessibility */
+.contact-link:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
-.card footer .carrot-down:hover {
-  cursor: pointer;
-  transition: transform 400ms;
-  transform: scale(1.5) rotate(-180deg);
+
+/* Print styles */
+@media print {
+  .container {
+    max-width: none;
+    padding: 0;
+    gap: 1rem;
+  }
+  
+  .profile-image img {
+    box-shadow: none;
+  }
+  
+  .contact-link {
+    box-shadow: none;
+  }
 }

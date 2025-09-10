@@ -1,153 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Matt Valdez, a great software guy.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matt Valdez - Experienced Full-Stack Engineer specializing in web and mobile applications">
+    <meta name="author" content="Matt Valdez">
     <title>Matt Valdez</title>
     <link rel="stylesheet" href="css/style.css">
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.5.0/hint.base.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="text/babel">
+    <main class="container">
+      <header class="hero">
+        <div class="profile-image">
+          <img src="img/profile.png" alt="Matt Valdez profile photo">
+        </div>
+        <h1 class="name">Matt Valdez</h1>
+        <p class="title">Full-Stack Software Engineer</p>
+        <p class="location">Atlanta, GA</p>
+      </header>
 
-      class Card extends React.Component {
-        constructor(props){
-          super(props)
-          this.state = {
-            experienceClasses: ['experience'],
-            open: false
-          }
-          this.toggleExperience = this.toggleExperience.bind(this)
-        }
-        toggleExperience(){
-          if (this.state.open){
-            this.setState({
-              experienceClasses: ['experience'],
-              open: false
-            })
-          }else{
-            let stateCopy = this.state.experienceClasses;
-            stateCopy.push('show');
-            this.setState({
-              experienceClasses: stateCopy,
-              open: true
-            })
-          }
-        }
-        render() {
-          return (
-            <div className="card">
-              <Contact name="Matt Valdez" title="Software Developer" email="matvaldez@gmail.com"/>
-              <Experience experienceClasses={this.state.experienceClasses.join(' ')}/>
-              <Footer toggleExperience={this.toggleExperience}/>
-            </div>
-          );
-        }
-      }
-
-      class Contact extends React.Component {
-        render() {
-          return (
-            <div className="contact">
-              <p className="name">{this.props.name}</p>
-              <p className="title">{this.props.title}</p>
-              <p className="email">
-                <a href={"mailto:"+this.props.email+"?Subject=Hello!"} className="email" target="_top">{this.props.email}</a>
-              </p>
-            </div>
-          );
-        }
-      }
-
-      class Experience extends React.Component {
-        constructor(props){
-          super(props)
-        }
-        render () {
-          return (
-            <div className={this.props.experienceClasses}>
-              <span className="intro-container"><p className="intro">I build web and mobile applications for <a href="https://www.standardco.de/" target="_blank">Standard Code</a> and <a href="https://www.securedatakit.com/" target="_blank">Secure Data Kit</a>. Located in Atlanta, GA.</p></span>
-              <img src="img/profile.png"/>
-              <ul>
-                <li className="skill-shake" aria-label="Ruby"><i className="devicon-ruby-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Rails"><i className="devicon-rails-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="JavaScript"><i className="devicon-javascript-plain skill"></i></li>
-                <li className="skill-shake" aria-label="React JS"><i className="devicon-react-original-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="jQuery"><i className="devicon-jquery-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Angular JS"><i className="devicon-angularjs-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="HTML 5"><i className="devicon-html5-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="CSS3"><i className="devicon-css3-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Bootstrap"><i className="devicon-bootstrap-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Node.js"><i className="devicon-nodejs-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="MySQL"><i className="devicon-mysql-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Postgresql"><i className="devicon-postgresql-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="LESS"><i className="devicon-less-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="git"><i className="devicon-git-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="AWS"><i className="devicon-amazonwebservices-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Heroku"><i className="devicon-heroku-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Trello"><i className="devicon-trello-plain-wordmark skill"></i></li>
-                <li className="skill-shake" aria-label="Atom"><i className="devicon-atom-original skill"></i></li>
-              </ul>
-              <div className="icon-div">
-                <a href="https://github.com/mattvaldez"><ion-icon name="logo-github"></ion-icon></a>
-                |
-                <a href="https://www.linkedin.com/in/matt-valdez-840b2b15/"><ion-icon name="logo-linkedin"></ion-icon></a>
-              </div>
-            </div>
-          );
-        }
-      }
-
-      class Footer extends React.Component {
-        constructor(props){
-          super(props)
-          this.state = {
-            toggleExperience: props.toggleExperience,
-            carrotClass: "carrot-down",
-            open: false,
-          }
-          this.toggleExperience = this.toggleExperience.bind(this)
-        }
-        toggleExperience(){
-          console.log("yolo");
-          if (this.state.open){
-            this.setState({
-              carrotClass: "carrot-down",
-              open: false
-            })
-          }else{
-            this.setState({
-              carrotClass: "carrot-up",
-              open: true
-            })
-          }
-          this.state.toggleExperience();
-        }
-        render () {
-          return (
-            <footer> 
-              <div className={this.state.carrotClass} onClick={this.toggleExperience}>
-               <ion-icon name="arrow-round-up"></ion-icon>
-              </div> 
-            </footer>
-          );
-        }
-      }
-
-      ReactDOM.render(
-        <Card />,
-        document.getElementById('root')
-      );
-
-    </script>
-    <script src="https://unpkg.com/ionicons@4.6.3/dist/ionicons.js"></script>
+      <footer class="contact">
+        <div class="contact-links">
+          <a href="mailto:matvaldez@gmail.com" class="contact-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Email
+          </a>
+          <a href="https://github.com/mattvaldez" target="_blank" rel="noopener" class="contact-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/matt-valdez-840b2b15/" target="_blank" rel="noopener" class="contact-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>
